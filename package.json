@@ -1,0 +1,22 @@
+{
+  "name": "smart-utility-toolkit",
+  "version": "1.0.0",
+  "description": "Lab Assignment 1 — Web Dev III (Node.js & Express Backend), Unit 1. Built entirely with **Node.js core modules** (`process`, `http`, `fs`, `crypto`) — no external packages, no Express, no database.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jety1503-tech/WEBDEV-III-LAB-ASSIGNMENT-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jety1503-tech/WEBDEV-III-LAB-ASSIGNMENT-1/issues"
+  },
+  "homepage": "https://github.com/jety1503-tech/WEBDEV-III-LAB-ASSIGNMENT-1#readme"
+}
