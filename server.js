@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 const port = 3000;
 
-const logmiddlewares = (req, res, next) => {   //custom middleware
-    console.log('Request URL:', req.url);
-    console.log('Request Method:', req.method);
-    next();
-}
+app.use(morgan('dev'));  //third party middleware
+
+// const logmiddlewares = (req, res, next) => {   //custom middleware
+//     console.log('Request URL:', req.url, 'Request Time:', new Date().toLocaleString(), 'Request Method:', req.method);
+//     next();
+// }
+
 
 const apicheckmiddleware = (req, res, next) => {   //custom middleware  
     if (req.query.API_KEY === '12345') {
@@ -16,7 +19,7 @@ const apicheckmiddleware = (req, res, next) => {   //custom middleware
     }
 };
 
-app.use(logmiddlewares);
+// app.use(logmiddlewares);
 app.use(apicheckmiddleware);
 
 app.get('/', (req, res) => {
@@ -24,7 +27,7 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-app.get("/students", (req, res) => {
+app.get("/students",apicheckmiddleware, (req, res) => {
     console.log('Hello, Students!');
     res.send("Hello Students");
 });
